@@ -1,0 +1,9 @@
+argh==0.26.2
+args==0.1.0
+clint==0.5.1
+coverage==4.3.4
+expects==0.8.0
+mamba==0.8.6
+pathtools==0.1.2
+PyYAML==3.12
+watchdog==0.8.3
