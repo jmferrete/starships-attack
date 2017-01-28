@@ -2,7 +2,7 @@
 
 from expects import *
 
-from game.starship import starship_service
+from game.model.starship import starship_service
 
 A_COMMANDER_ID="an-example-commander-id"
 A_STARSHIP_NAME="an-example-starship-name"

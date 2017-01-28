@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-from game.commander.commander import Commander
+from game.model.commander.commander import Commander
 
 
 class CommanderService(object):

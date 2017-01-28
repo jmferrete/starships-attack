@@ -2,7 +2,7 @@
 
 from expects import *
 
-from game.commander import commander_service
+from game.model.commander import commander_service
 
 A_COMMANDER_NAME="an-example-commander-name"
 

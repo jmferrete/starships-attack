@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-from game.starship.starship import Starship
+from game.model.starship.starship import Starship
 
 
 class StarshipService(object):
