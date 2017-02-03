@@ -14,3 +14,6 @@ class PlanetService(object):
 
     def improve_metal_mine(self, planet):
         planet.metal_mine_level += 1
+
+    def improve_oil_station(self, planet):
+        planet.oil_station_level += 1

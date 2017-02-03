@@ -11,5 +11,6 @@ class Planet(object):
         self.name = name
         self.onwer_id = onwer_id
         self.metal_mine_level = 0
+        self.oil_station_level = 0
 
 

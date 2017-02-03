@@ -22,6 +22,13 @@ with describe('Planet service'):
 
             expect(planet).to(have_properties(metal_mine_level=1))
 
+        with it('improve the oil extraction station'):
+            planet = _a_planet_service().colonize_planet(name=A_PLANET_NAME, owner_id=A_COMMANDER_ID)
+
+            _a_planet_service().improve_oil_station(planet)
+
+            expect(planet).to(have_properties(oil_station_level=1))
+
 
 def _a_planet_service():
     return planet_service.PlanetService()
