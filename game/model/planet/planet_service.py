@@ -12,3 +12,5 @@ class PlanetService(object):
     def colonize_planet(self, name, owner_id):
         return Planet(name, owner_id)
 
+    def improve_metal_mine(self, planet):
+        planet.metal_mine_level += 1

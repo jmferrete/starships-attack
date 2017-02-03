@@ -10,5 +10,6 @@ class Planet(object):
         self.id = uuid.uuid4()
         self.name = name
         self.onwer_id = onwer_id
+        self.metal_mine_level = 0
 
 
