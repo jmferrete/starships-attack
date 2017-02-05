@@ -14,6 +14,11 @@ class Database(object):
         self.r.set(id, pickle.dumps(elem))
 
     def get(self, id):
-        return pickle.loads(self.r.get(id))
+        result = self.r.get(id)
+        if result is not None:
+            return pickle.loads(result)
+
+    def delete(self, id):
+        self.r.delete(id)
 
 

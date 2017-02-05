@@ -18,6 +18,17 @@ with describe('Commander repository'):
 
             expect(found_commander).to(have_properties(name=A_COMMANDER_NAME))
 
+    with context('Delete commander'):
+        with it('by ID'):
+            commander = _a_commander_service().create_commander(name=A_COMMANDER_NAME)
+            commander_repository = _a_commander_repository()
+            commander_repository.put(commander)
+
+            commander_repository.delete(commander.id)
+            found_commander = commander_repository.find(commander.id)
+
+            expect(found_commander).to(be(None))
+
 def _a_commander_service():
     return commander_service.CommanderService()
 
