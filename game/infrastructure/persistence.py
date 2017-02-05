@@ -18,7 +18,11 @@ class Database(object):
         if result is not None:
             return pickle.loads(result)
 
+    def getKeys(self, id):
+        return self.r.keys("*" + id + "*")
+
     def delete(self, id):
         self.r.delete(id)
 
-
+    def clean(self):
+        self.r.flushall()

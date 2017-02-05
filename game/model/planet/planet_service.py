@@ -9,8 +9,8 @@ class PlanetService(object):
     def __init__(self):
         pass
 
-    def colonize_planet(self, name, owner_id):
-        return Planet(name, owner_id)
+    def colonize_planet(self, name, owner_id, metal_mine_level=None, oil_station_level=None):
+        return Planet(name, owner_id, metal_mine_level, oil_station_level)
 
     def improve_metal_mine(self, planet):
         planet.metal_mine_level += 1

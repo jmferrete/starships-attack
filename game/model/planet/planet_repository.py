@@ -13,6 +13,9 @@ class PlanetRepository(Repository):
     def find(self, planet_id):
         return Repository.find(self, (self.PREFIX + str(planet_id)))
 
+    def findAll(self):
+        return Repository.findAll(self, self.PREFIX)
+
     def put(self, planet):
         Repository.put(self, (self.PREFIX + str(planet.id)), planet)
 

@@ -12,6 +12,15 @@ class Repository(object):
     def find(self, obj_id):
         return self.database.get(obj_id)
 
+    def findAll(self, obj_id):
+        objs = []
+        ids = self.database.getKeys(obj_id)
+
+        for id in ids:
+            objs.append(self.database.get(id))
+
+        return objs
+
     def put(self, obj_id, obj):
         self.database.put(obj_id, obj)
 
