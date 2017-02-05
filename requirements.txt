@@ -3,7 +3,12 @@ args==0.1.0
 clint==0.5.1
 coverage==4.3.4
 expects==0.8.0
+flake8==3.2.1
 mamba==0.8.6
+mccabe==0.5.3
 pathtools==0.1.2
+pycodestyle==2.2.0
+pyflakes==1.3.0
 PyYAML==3.12
+redis==2.10.5
 watchdog==0.8.3
