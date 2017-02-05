@@ -13,7 +13,7 @@ with describe('Starship repository'):
         with it('by ID'):
             starship = _a_starship_service().create_starship(name=A_STARSHIP_NAME, owner_id=A_COMMANDER_ID)
             starship_repository = _a_starship_repository()
-            starship_repository.put(starship.id, starship)
+            starship_repository.put(starship)
 
             found_starship = starship_repository.find(starship.id)
 
@@ -23,9 +23,9 @@ with describe('Starship repository'):
         with it('by ID'):
             starship = _a_starship_service().create_starship(name=A_STARSHIP_NAME, owner_id=A_COMMANDER_ID)
             starship_repository = _a_starship_repository()
-            starship_repository.put(starship.id, starship)
+            starship_repository.put(starship)
 
-            starship_repository.delete(starship.id)
+            starship_repository.delete(starship)
             found_starship = starship_repository.find(starship.id)
 
             expect(found_starship).to(be(None))

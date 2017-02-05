@@ -12,10 +12,10 @@ class Repository(object):
     def find(self, obj_id):
         return self.database.get(obj_id)
 
-    def put(self, id, obj):
-        self.database.put(id, obj)
+    def put(self, obj_id, obj):
+        self.database.put(obj_id, obj)
 
-    def delete(self, id):
-        self.database.delete(id)
+    def delete(self, obj_id):
+        self.database.delete(obj_id)
 
 

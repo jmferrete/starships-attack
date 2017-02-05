@@ -13,7 +13,7 @@ with describe('Planet repository'):
         with it('by ID'):
             planet = _a_planet_service().colonize_planet(name=A_PLANET_NAME, owner_id=A_COMMANDER_ID)
             planet_repository = _a_planet_repository()
-            planet_repository.put(planet.id, planet)
+            planet_repository.put(planet)
 
             found_planet = planet_repository.find(planet.id)
 
@@ -23,9 +23,9 @@ with describe('Planet repository'):
         with it('by ID'):
             planet = _a_planet_service().colonize_planet(name=A_PLANET_NAME, owner_id=A_COMMANDER_ID)
             planet_repository = _a_planet_repository()
-            planet_repository.put(planet.id, planet)
+            planet_repository.put(planet)
 
-            planet_repository.delete(planet.id)
+            planet_repository.delete(planet)
             found_planet = planet_repository.find(planet.id)
 
             expect(found_planet).to(be(None))
