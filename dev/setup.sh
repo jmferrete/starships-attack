@@ -1,5 +1,6 @@
 #!/bin/bash
 
+export PYTHONPATH=$(pwd)
 docker_bin=$(which docker)
 
 if [ "$docker_bin" == "" ]; then
