@@ -90,3 +90,6 @@ ENV/
 
 # VIM tmp files
 *.swp
+
+# IntelliJ/PyCharm project files
+.idea
