@@ -7,8 +7,8 @@ A game based in interestellar battles. Also a pet project :)
 $> dev/setup.sh
 ```
 
-## To run tests
+## To run tests (and see documentation)
 
 ```bash
-$> mamba
+$> mamba -f documentation
 ```

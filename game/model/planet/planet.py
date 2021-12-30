@@ -2,6 +2,12 @@
 
 
 import uuid
+from datetime import datetime
+
+BASE_METAL_PRODUCTION = 20
+METAL_MINE_LEVEL_INCREMENT = 25
+BASE_OIL_PRODUCTION = 10
+OIL_STATION_LEVEL_INCREMENT = 15
 
 
 class Planet(object):
@@ -14,5 +20,4 @@ class Planet(object):
         self.oil_station_level = oil_station_level
         self.metal_units = 0
         self.oil_units = 0
-
-
+        self.last_update_time = datetime.utcnow()
