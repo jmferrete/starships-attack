@@ -10,5 +10,5 @@ $> dev/setup.sh
 ## To run tests
 
 ```bash
-$> mamba test
+$> mamba
 ```
