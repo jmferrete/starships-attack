@@ -16,7 +16,7 @@ if __name__ == '__main__':
 
     while True:
         print("Recalculating resources...")
-        all_planets = planet_repository.findAll()
+        all_planets = planet_repository.find_all()
 
         for planet in all_planets:
             print("Planet -> {}".format(planet.name))

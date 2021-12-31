@@ -4,8 +4,8 @@ from expects import *
 
 from game.model.planet import planet_service
 
-A_COMMANDER_ID="an-example-commander-id"
-A_PLANET_NAME="an-example-planet-name"
+A_COMMANDER_ID = "an-example-commander-id"
+A_PLANET_NAME = "an-example-planet-name"
 
 with describe('Planet service'):
     with context('Colonize planet'):
@@ -67,4 +67,3 @@ with describe('Planet service'):
 
 def _a_planet_service():
     return planet_service.PlanetService()
-

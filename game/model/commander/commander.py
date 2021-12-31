@@ -3,6 +3,8 @@
 
 import uuid
 
+from pydantic import BaseModel
+
 
 class Commander(object):
 
@@ -11,7 +13,10 @@ class Commander(object):
         self.name = name
         self.starships = []
 
-    def addStarship(self, starship):
+    def add_starship(self, starship):
         self.starships.append(starship)
 
 
+class CommanderInfo(BaseModel):
+    commander_name: str
+    starship_name: str

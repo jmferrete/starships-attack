@@ -13,8 +13,8 @@ class PlanetRepository(Repository):
     def find(self, planet_id):
         return Repository.find(self, (self.schema + str(planet_id)))
 
-    def findAll(self):
-        return Repository.findAll(self, self.schema)
+    def find_all(self):
+        return Repository.find_all(self, self.schema)
 
     def put(self, planet):
         Repository.put(self, (self.schema + str(planet.id)), planet)

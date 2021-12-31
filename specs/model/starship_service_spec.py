@@ -4,8 +4,8 @@ from expects import *
 
 from game.model.starship import starship_service
 
-A_COMMANDER_ID="an-example-commander-id"
-A_STARSHIP_NAME="an-example-starship-name"
+A_COMMANDER_ID = "an-example-commander-id"
+A_STARSHIP_NAME = "an-example-starship-name"
 
 with describe('Starship service'):
     with context('Create starship'):
@@ -17,4 +17,3 @@ with describe('Starship service'):
 
 def _a_starship_service():
     return starship_service.StarshipService()
-

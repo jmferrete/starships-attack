@@ -5,8 +5,8 @@ from expects import *
 from game.model.starship import starship_service
 from game.model.starship import starship_repository
 
-A_COMMANDER_ID="an-example-commander-id"
-A_STARSHIP_NAME="an-example-starship-name"
+A_COMMANDER_ID = "an-example-commander-id"
+A_STARSHIP_NAME = "an-example-starship-name"
 
 with describe('Starship repository'):
     with context('Find starship'):
@@ -30,8 +30,10 @@ with describe('Starship repository'):
 
             expect(found_starship).to(be(None))
 
+
 def _a_starship_service():
     return starship_service.StarshipService()
+
 
 def _a_starship_repository():
     return starship_repository.StarshipRepository()

@@ -4,7 +4,7 @@ from expects import *
 
 from game.model.commander import commander_service
 
-A_COMMANDER_NAME="an-example-commander-name"
+A_COMMANDER_NAME = "an-example-commander-name"
 
 with describe('Commander service'):
     with context('Create commander'):

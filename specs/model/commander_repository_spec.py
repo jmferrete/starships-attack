@@ -5,7 +5,7 @@ from expects import *
 from game.model.commander import commander_service
 from game.model.commander import commander_repository
 
-A_COMMANDER_NAME="an-example-commander-name"
+A_COMMANDER_NAME = "an-example-commander-name"
 
 with describe('Commander repository'):
     with context('Find commander'):
@@ -29,8 +29,10 @@ with describe('Commander repository'):
 
             expect(found_commander).to(be(None))
 
+
 def _a_commander_service():
     return commander_service.CommanderService()
+
 
 def _a_commander_repository():
     return commander_repository.CommanderRepository()

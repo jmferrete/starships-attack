@@ -5,8 +5,8 @@ from expects import *
 from game.model.planet import planet_service
 from game.model.planet import planet_repository
 
-A_COMMANDER_ID="an-example-commander-id"
-A_PLANET_NAME="an-example-planet-name"
+A_COMMANDER_ID = "an-example-commander-id"
+A_PLANET_NAME = "an-example-planet-name"
 
 with describe('Planet repository'):
     with context('Find planet'):
@@ -30,8 +30,10 @@ with describe('Planet repository'):
 
             expect(found_planet).to(be(None))
 
+
 def _a_planet_service():
     return planet_service.PlanetService()
+
 
 def _a_planet_repository():
     return planet_repository.PlanetRepository()

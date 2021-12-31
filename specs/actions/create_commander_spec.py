@@ -7,8 +7,8 @@ from game.model.starship.starship_service import StarshipService
 
 from game.actions.create_commander import CreateCommander
 
-A_COMMANDER_NAME="an-example-commander-name"
-A_STARSHIP_NAME="an-example-starship-name"
+A_COMMANDER_NAME = "an-example-commander-name"
+A_STARSHIP_NAME = "an-example-starship-name"
 
 with describe('Create commander action'):
     with it('Can create a commander with an initial starship'):
@@ -19,5 +19,3 @@ with describe('Create commander action'):
         expect(commander).to(have_properties(name=A_COMMANDER_NAME))
         expect(commander.starships).to(have_length(1))
         expect(commander.starships[0]).to(have_properties(name=A_STARSHIP_NAME))
-
-

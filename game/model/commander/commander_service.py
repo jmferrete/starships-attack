@@ -11,4 +11,3 @@ class CommanderService(object):
 
     def create_commander(self, name):
         return Commander(name)
-

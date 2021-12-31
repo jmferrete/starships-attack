@@ -12,9 +12,9 @@ class Repository(object):
     def find(self, obj_id):
         return self.database.get(obj_id)
 
-    def findAll(self, obj_id):
+    def find_all(self, obj_id):
         objs = []
-        ids = self.database.getKeys(obj_id)
+        ids = self.database.get_keys(obj_id)
 
         for id in ids:
             objs.append(self.database.get(id))
