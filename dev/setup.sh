@@ -3,27 +3,40 @@
 export PYTHONPATH=$(pwd)
 docker_bin=$(which docker)
 
-if [ "$docker_bin" == "" ]; then
-    echo "Installing docker..."
-    sudo apt-get update >/dev/null
-    sudo apt-get install -y curl \
-        linux-image-extra-$(uname -r) \
-        linux-image-extra-virtual \
-        apt-transport-https \
-        ca-certificates >/dev/null
-    curl -fsSL https://yum.dockerproject.org/gpg | sudo apt-key add - >/dev/null
-    sudo apt-get install software-properties-common >/dev/null
-    sudo add-apt-repository \
-        "deb https://apt.dockerproject.org/repo/ \
-        ubuntu-$(lsb_release -cs) \
-        main" >/dev/null
-    sudo apt-get update >/dev/null
-    sudo apt-get -y install docker-engine >/dev/null
-    if [ $? -eq 0 ]; then
-        echo "Docker installed."
+if [[ "$docker_bin" == "" ]]; then
+    echo "Docker is needed for running this development environment successfully."
+    read -p "Do you want to install docker with this script? (y/n): " install_docker
+
+    if [[ "$install_docker" == "y" ]]; then
+        echo "Installing docker..."
+        sudo apt-get update >/dev/null
+        sudo apt-get install -y \
+            ca-certificates \
+            curl \
+            gnupg \
+            lsb-release >/dev/null
+        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg >/dev/null
+        echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" \
+            | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+        sudo apt-get update >/dev/null
+        sudo apt-get install -y docker-ce docker-ce-cli containerd.io >/dev/null
+
+        if [ $? -eq 0 ]; then
+            echo "Docker installed."
+        else
+            echo "There was a problem installing docker."
+        fi
     else
-        echo "There was a problem installing docker."
+        echo "Aborting."
+        exit 1
     fi
+fi
+
+if [[ "$VIRTUAL_ENV" == "" ]]; then
+    echo "A virtualenv is required."
+    echo "You can create one with the next commands:"
+    echo "    python3 -m venv venv"
+    echo "    . venv/bin/activate"
 fi
 
 pip install -r requirements.txt
